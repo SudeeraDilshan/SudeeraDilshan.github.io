@@ -1,358 +1,1924 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudeera Dilshan - AI/ML Engineer</title>
+    <title>Sudeera Dilshan | AI/ML Engineer</title>
+    <meta name="description" content="Portfolio of Sudeera Dilshan - AI/ML Engineer & University of Moratuwa AI Graduate specializing in LLM/VLM integrations, Agentic AI, MCP servers, and Computer Vision.">
+    <meta name="keywords" content="Sudeera Dilshan, AI Engineer, Machine Learning, LLM, Agentic AI, LangGraph, MCP, Moratuwa, Deep Learning">
+    <meta name="author" content="Sudeera Dilshan">
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sudeera Dilshan | AI/ML Engineer">
+    <meta property="og:description" content="AI Graduate from University of Moratuwa specializing in Agentic AI, MCP servers, LLM fine-tuning, and production AI systems.">
+    <meta property="og:image" content="mee.jpeg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary-color: #003366; /* Matched to cvblue from LaTeX */
-            --secondary-color: #003366;
-            --accent-color: #004080;
-            --text-color: #333;
-            --light-bg: #ecf0f1;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #f9f9f9;
-        }
-        .container {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        /* Header Styles for Profile Image */
-        .header-container {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent-color);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .header-text {
-            text-align: left;
-        }
-        
-        h1 {
-            color: var(--primary-color);
-            margin: 0 0 10px 0;
-            font-size: 2.5em;
-        }
-        .subtitle {
-            color: gray;
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        .contact-info {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            color: #666;
-            font-size: 0.9em;
-            justify-content: flex-start;
-        }
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        h2 {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 8px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 2px;
-        }
-        .item-title {
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-        .item-subtitle {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 5px;
-        }
-        .item-date {
-            color: #777;
-            font-size: 0.9em;
-            font-style: italic;
-        }
-        ul {
-            margin-top: 5px;
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 5px;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-        .skill-category {
-            font-weight: bold;
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 600px) {
-            .header-container {
+        /* Dark Theme (Default) */
+        [data-theme="dark"] {
+            --bg-base: #090d16;
+            --bg-card: rgba(18, 25, 41, 0.75);
+            --bg-card-hover: rgba(26, 36, 58, 0.85);
+            --bg-elevated: #162035;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(56, 189, 248, 0.35);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #818cf8;
+            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #6366f1 50%, #a855f7 100%);
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --tag-bg: rgba(56, 189, 248, 0.1);
+            --tag-text: #7dd3fc;
+            --tag-border: rgba(56, 189, 248, 0.2);
+            --header-glass: rgba(9, 13, 22, 0.85);
+            --shadow-subtle: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+            --code-bg: #0f172a;
+        }
+
+        /* Light Theme */
+        [data-theme="light"] {
+            --bg-base: #f8fafc;
+            --bg-card: rgba(255, 255, 255, 0.9);
+            --bg-card-hover: #ffffff;
+            --bg-elevated: #edf2f7;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(14, 165, 233, 0.4);
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --accent-primary: #0284c7;
+            --accent-secondary: #4f46e5;
+            --accent-gradient: linear-gradient(135deg, #0284c7 0%, #4f46e5 50%, #7c3aed 100%);
+            --accent-glow: rgba(2, 132, 199, 0.12);
+            --tag-bg: rgba(2, 132, 199, 0.08);
+            --tag-text: #0369a1;
+            --tag-border: rgba(2, 132, 199, 0.2);
+            --header-glass: rgba(248, 250, 252, 0.85);
+            --shadow-subtle: 0 4px 25px -4px rgba(0, 0, 0, 0.07);
+            --code-bg: #f1f5f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            line-height: 1.65;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Background ambient glow */
+        .ambient-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 500px;
+            background: radial-gradient(circle at 50% -100px, rgba(56, 189, 248, 0.12), rgba(99, 102, 241, 0.08), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Container */
+        .wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 24px 20px 80px;
+        }
+
+        /* Top Bar */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            margin-bottom: 32px;
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 9999px;
+            box-shadow: var(--shadow-subtle);
+            position: sticky;
+            top: 16px;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .nav-logo-badge {
+            background: var(--accent-gradient);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-theme-toggle {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-theme-toggle:hover {
+            border-color: var(--accent-primary);
+            transform: scale(1.05);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            padding: 9px 18px;
+            border-radius: 9999px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: #ffffff;
+            box-shadow: 0 4px 14px 0 rgba(56, 189, 248, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(56, 189, 248, 0.5);
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .btn-secondary {
+            background: var(--bg-elevated);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        /* Hero / Header Card */
+        .hero-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: var(--shadow-subtle);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle at 100% 0%, rgba(99, 102, 241, 0.15), transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(56, 189, 248, 0.4);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+            display: block;
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            background: #10b981;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 3px solid var(--bg-base);
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+        }
+
+        .hero-details {
+            flex: 1;
+        }
+
+        .hero-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--tag-bg);
+            border: 1px solid var(--tag-border);
+            color: var(--tag-text);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .hero-badge-pill::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        .hero-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 6px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-title {
+            font-size: 1.12rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .hero-title span {
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .contact-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.83rem;
+            color: var(--text-secondary);
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-pill:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* Section Layout */
+        .section {
+            margin-bottom: 36px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.45rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-primary);
+        }
+
+        .section-title svg {
+            color: var(--accent-primary);
+        }
+
+        .section-count {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: var(--bg-elevated);
+            padding: 3px 9px;
+            border-radius: 9999px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 18px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+            background: var(--bg-card-hover);
+        }
+
+        .card-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .card-main-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.35;
+        }
+
+        .card-subtitle {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card-subtitle a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .card-subtitle a:hover {
+            text-decoration: underline;
+        }
+
+        .date-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            background: var(--bg-elevated);
+            padding: 3px 10px;
+            border-radius: 9999px;
+            border: 1px solid var(--border-color);
+            white-space: nowrap;
+        }
+
+        .card-body p {
+            color: var(--text-secondary);
+            font-size: 0.93rem;
+            margin-bottom: 12px;
+        }
+
+        .card-bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .card-bullet-list li {
+            position: relative;
+            padding-left: 20px;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            margin-bottom: 8px;
+            line-height: 1.55;
+        }
+
+        .card-bullet-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        /* Tech Tag Badges */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 14px;
+        }
+
+        .tech-tag {
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            font-weight: 500;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            border: 1px solid var(--tag-border);
+            padding: 3px 9px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        /* Project Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .project-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            background: var(--bg-card-hover);
+        }
+
+        .project-top {
+            margin-bottom: 12px;
+        }
+
+        .project-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .project-title {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.35;
+        }
+
+        .project-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .icon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .icon-btn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: scale(1.08);
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        /* Filter Tabs */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .filter-btn {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--tag-bg);
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-group {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .skill-group:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+
+        .skill-group-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-group-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-pill {
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: var(--bg-elevated);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        /* Certifications & Achievements */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 14px;
+        }
+
+        .cert-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px 18px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .cert-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+            background: var(--bg-card-hover);
+        }
+
+        .cert-info {
+            flex: 1;
+        }
+
+        .cert-name {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .cert-issuer {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .cert-arrow {
+            color: var(--accent-primary);
+            margin-left: 10px;
+            transition: var(--transition);
+        }
+
+        .cert-card:hover .cert-arrow {
+            transform: translateX(4px);
+        }
+
+        /* Publication Card */
+        .pub-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-primary);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: var(--transition);
+        }
+
+        .pub-card:hover {
+            border-color: var(--border-hover);
+            border-left-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .pub-title {
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .pub-venue {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .pub-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* References Grid */
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        .ref-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .ref-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+
+        .ref-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .ref-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 2px;
+        }
+
+        .ref-inst {
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .ref-contact a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .ref-contact a:hover {
+            color: var(--accent-primary);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 820px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
                 flex-direction: column;
                 text-align: center;
+                gap: 24px;
             }
-            .header-text {
-                text-align: center;
+
+            .hero-title {
+                justify-content: center;
             }
-            .contact-info {
-                justify-content: center !important;
+
+            .contact-links {
+                justify-content: center;
             }
-            .item-header {
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .wrapper {
+                padding: 16px 14px 60px;
+            }
+
+            .hero-card {
+                padding: 24px 18px;
+            }
+
+            .hero-name {
+                font-size: 1.95rem;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .certs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-header-flex {
                 flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        
-        <header class="header-container">
-            <div>
-                <img src="mee.jpg" alt="Sudeera Dilshan" class="profile-img">
+    <div class="ambient-glow"></div>
+
+    <div class="wrapper">
+        <!-- Top Navigation Bar -->
+        <nav class="top-nav" aria-label="Main Navigation">
+            <a href="#about" class="nav-logo">
+                <span>Sudeera Dilshan</span>
+                <span class="nav-logo-badge">AI / ML</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="Dilshan_RGS_CV.pdf" download="Dilshan_RGS_CV.pdf" class="btn btn-primary cv-download-btn" title="Download CV (PDF)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>Download CV</span>
+                </a>
+
+                <button id="themeToggleBtn" class="btn-theme-toggle" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+                    <svg id="themeIconDark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="themeIconLight" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </div>
-            <div class="header-text">
-                <h1>Sudeera Dilshan</h1>
-                <div class="subtitle">AI/ML Engineer</div>
-                <div class="contact-info">
-                    <span>📱 +94 77 943 5845</span> | 
-                    <span>✉️ <a href="mailto:dilshanrgs31@gmail.com">dilshanrgs31@gmail.com</a></span> | 
-                    <span>🐙 <a href="https://github.com/SudeeraDilshan" target="_blank">github/SudeeraDilshan</a></span> |
-                    <span>💼 <a href="https://lk.linkedin.com/in/sudeera-dilshan-2461a5295" target="_blank">linkedin/sudeera-dilshan</a></span> |
-                    <span>📝 <a href="https://medium.com/@dilshanrgs31" target="_blank">medium/@dilshanrgs31</a></span>
+        </nav>
+
+        <!-- Hero Card -->
+        <header class="hero-card" id="about">
+            <div class="hero-content">
+                <div class="avatar-wrapper">
+                    <img src="mee.jpeg" alt="Sudeera Dilshan" class="profile-img" width="140" height="140">
+                    <div class="status-badge" title="Active & Open to Opportunities"></div>
+                </div>
+
+                <div class="hero-details">
+                    <div class="hero-badge-pill">Available for AI / ML Roles</div>
+                    <h1 class="hero-name">Sudeera Dilshan</h1>
+                    <div class="hero-title">
+                        <strong>AI/ML Engineer</strong>
+                        <span>•</span>
+                        <strong>AI Graduate</strong>
+                        <span>•</span>
+                        <span>University of Moratuwa</span>
+                    </div>
+
+                    <div class="contact-links">
+                        <a href="mailto:dilshanrgs31@gmail.com" class="contact-pill" title="Email">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>dilshanrgs31@gmail.com</span>
+                        </a>
+
+                        <a href="tel:+94779435845" class="contact-pill" title="Phone">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>+94 77 943 5845</span>
+                        </a>
+
+                        <a href="https://github.com/SudeeraDilshan" target="_blank" rel="noopener noreferrer" class="contact-pill" title="GitHub Profile">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            <span>SudeeraDilshan</span>
+                        </a>
+
+                        <a href="https://lk.linkedin.com/in/sudeera-dilshan-2461a5295" target="_blank" rel="noopener noreferrer" class="contact-pill" title="LinkedIn Profile">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            <span>sudeera-dilshan</span>
+                        </a>
+
+                        <a href="https://medium.com/@dilshanrgs31" target="_blank" rel="noopener noreferrer" class="contact-pill" title="Medium Blog">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                            </svg>
+                            <span>@dilshanrgs31</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="Dilshan_RGS_CV.pdf" download="Dilshan_RGS_CV.pdf" class="btn btn-primary cv-download-btn" id="heroDownloadCvBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span>Download CV (PDF)</span>
+                        </a>
+
+                        <a href="Dilshan_RGS_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="heroViewCvBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <span>View Full CV</span>
+                        </a>
+
+                        <a href="mailto:dilshanrgs31@gmail.com" class="btn btn-secondary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                            <span>Get in Touch</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <section>
-            <h2>About Me</h2>
-            <p>Final-year B.Sc. (Hons) Artificial Intelligence undergraduate at the University of Moratuwa with hands-on industry experience in LLM integrations, agentic AI workflows, and MCP server development. Passionate about Data Science, machine learning research, computer vision, and building production-ready AI systems. Skilled in full-stack and mobile app development, with a proven track record of delivering impactful AI solutions. A published researcher, technical content creator on Medium, and competitive programmer committed to continuous learning and responsible AI innovation.</p>
-        </section>
-
-        <section>
-            <h2>Education</h2>
-            <div>
-                <div class="item-header">
-                    <span class="item-title">B.Sc. (Hons) in Artificial Intelligence (CGPA: 3.33)</span>
-                    <span class="item-date">2022 &ndash; 2026</span>
-                </div>
-                <div class="item-subtitle">University of Moratuwa, Colombo</div>
+        <!-- About Me Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    About Me
+                </h2>
             </div>
-            <div style="margin-top: 15px;">
-                <div class="item-header">
-                    <span class="item-title">G.C.E. Advanced Level &ndash; Common Stream</span>
-                    <span class="item-date">2017 &ndash; 2019</span>
-                </div>
-                <div class="item-subtitle">Richmond College, Galle</div>
-                <ul>
-                    <li>Combined Mathematics &ndash; A, Physics &ndash; A, Information Technology &ndash; B &emsp; Z-Score: 2.2305</li>
-                </ul>
+            <div class="card">
+                <p style="font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary);">
+                    B.Sc. (Hons) Artificial Intelligence graduate from the University of Moratuwa with hands-on industry experience in <strong>LLM/VLM integrations</strong>, <strong>agentic AI workflows</strong>, and <strong>MCP server development</strong>. Passionate about Data Science, machine learning, computer vision, and building production-ready AI systems. Skilled in full-stack and mobile app development, with a proven track record of delivering impactful AI solutions. A published researcher, technical content creator on Medium, and competitive programmer committed to continuous learning and responsible AI innovation.
+                </p>
             </div>
         </section>
 
-        <section>
-            <h2>Experience</h2>
-            <div>
-                <div class="item-header">
-                    <span class="item-title">Associate AI Engineer</span>
-                    <span class="item-date">Aug 2025 &ndash; Oct 2025</span>
+        <!-- Work Experience Section -->
+        <section class="section" id="experience">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                    Work Experience
+                </h2>
+                <span class="section-count">2 Positions</span>
+            </div>
+
+            <!-- Role 1 -->
+            <div class="card">
+                <div class="card-header-flex">
+                    <div>
+                        <h3 class="card-main-title">Associate AI Engineer</h3>
+                        <div class="card-subtitle">
+                            <a href="https://www.ariso.io/" target="_blank" rel="noopener noreferrer">Ariso Technologies (Pvt) Ltd</a>
+                        </div>
+                    </div>
+                    <span class="date-pill">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        Aug 2025 – Oct 2025
+                    </span>
                 </div>
-                <div class="item-subtitle"><a href="https://www.ariso.io/" target="_blank">Ariso Technologies (Pvt) Ltd</a></div>
-                <ul>
+                <ul class="card-bullet-list">
                     <li>Developed and integrated production-level LLM pipelines and MCP server components to power intelligent, context-aware AI services.</li>
                     <li>Contributed to time-series forecasting model development and optimised deployed AI systems for scalability and reliability in production environments.</li>
-                    <li><em>Technologies: Python, LLMs, LangGraph, MCP, FastAPI, Docker, Prophet, statsmodels</em></li>
                 </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">LLMs</span>
+                    <span class="tech-tag">LangGraph</span>
+                    <span class="tech-tag">MCP</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Prophet</span>
+                    <span class="tech-tag">statsmodels</span>
+                </div>
             </div>
 
-            <div style="margin-top: 20px;">
-                <div class="item-header">
-                    <span class="item-title">AI Engineer Intern</span>
-                    <span class="item-date">Feb 2025 &ndash; Jul 2025</span>
+            <!-- Role 2 -->
+            <div class="card">
+                <div class="card-header-flex">
+                    <div>
+                        <h3 class="card-main-title">AI Engineer Intern</h3>
+                        <div class="card-subtitle">
+                            <a href="https://www.ariso.io/" target="_blank" rel="noopener noreferrer">Ariso Technologies (Pvt) Ltd</a>
+                        </div>
+                    </div>
+                    <span class="date-pill">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        Feb 2025 – Jul 2025
+                    </span>
                 </div>
-                <div class="item-subtitle"><a href="https://www.ariso.io/" target="_blank">Ariso Technologies (Pvt) Ltd</a></div>
-                <ul>
+                <ul class="card-bullet-list">
                     <li>Built and deployed agentic AI workflows with multi-step reasoning and tool-use capabilities, integrating LLMs into real-world business automation pipelines.</li>
                     <li>Engineered MCP server modules and AI-powered microservices, enabling seamless orchestration of external data sources and APIs.</li>
                     <li>Designed and implemented an agent orchestration framework using Mosquitto message broker for sending commands to agents and Redis for distributed cache memory management.</li>
                     <li>Built knowledge base services for LangChain and LangGraph agents, enabling dynamic assignment of relevant knowledge bases to specialised agents for context-aware reasoning.</li>
                     <li>Created and managed agent workflows using Langflow, streamlining the visual design and orchestration of multi-agent AI pipelines.</li>
-                    <li><em>Technologies: Python, LangChain, LangGraph, LLMs, MCP, Langflow, Mosquitto, Redis, FastAPI, Docker</em></li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">LangChain</span>
+                    <span class="tech-tag">LangGraph</span>
+                    <span class="tech-tag">LLMs</span>
+                    <span class="tech-tag">MCP</span>
+                    <span class="tech-tag">Langflow</span>
+                    <span class="tech-tag">Mosquitto</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Docker</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section" id="education">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                    Education
+                </h2>
+            </div>
+
+            <!-- University of Moratuwa -->
+            <div class="card">
+                <div class="card-header-flex">
+                    <div>
+                        <h3 class="card-main-title">B.Sc. (Hons) in Artificial Intelligence</h3>
+                        <div class="card-subtitle">University of Moratuwa, Colombo, Sri Lanka</div>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                        <span class="tech-tag" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.3); font-weight: 700;">GPA: 3.33</span>
+                        <span class="date-pill">2022 – 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Richmond College -->
+            <div class="card">
+                <div class="card-header-flex">
+                    <div>
+                        <h3 class="card-main-title">G.C.E. Advanced Level</h3>
+                        <div class="card-subtitle">Richmond College, Galle, Sri Lanka</div>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                        <span class="tech-tag" style="background: rgba(99, 102, 241, 0.15); color: #818cf8; border-color: rgba(99, 102, 241, 0.3); font-weight: 700;">Z-Score: 2.2305</span>
+                        <span class="date-pill">2017 – 2019</span>
+                    </div>
+                </div>
+                <p style="margin-top: 8px; font-size: 0.92rem; color: var(--text-secondary);">
+                    <strong>Subjects:</strong> Combined Mathematics – A | Physics – A | ICT – B
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    Featured Projects
+                </h2>
+                <span class="section-count">8 Projects</span>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-bar" id="projectFilterBar">
+                <button class="filter-btn active" data-filter="all">All Projects (8)</button>
+                <button class="filter-btn" data-filter="genai">GenAI & SLMs</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning & Data</button>
+                <button class="filter-btn" data-filter="cv">Computer Vision</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="genai">
+                    <div class="project-top">
+                        <div class="project-title-row">
+                            <h3 class="project-title">Soft Prompting-Based SLM Generalization – Meta-Learning & Fuzzy Reasoning</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/SudeeraDilshan/Soft-Prompting-based-small-language-models-generalization" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View on GitHub">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 8px;">
+                            <span class="tech-tag" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: rgba(168, 85, 247, 0.3);">Research</span>
+                        </div>
+                        <p class="project-desc">
+                            Research to improve cross-task generalisation in Small Language Models through chain-of-thought knowledge distillation and meta-learning. Designed a custom architecture with a lightweight MLP and a top fuzzy layer for adaptive soft prompt optimisation, and implemented a custom transformer, MLP, and ANFIS module with soft prompts trained using First-Order MAML (FOMAML) on Qwen2.5-0.5B.
+                        </p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Qwen2.5-0.5B</span>
+                        <span class="tech-tag">FOMAML</span>
+                        <span class="tech-tag">ANFIS</span>
+                        <span class="tech-tag">Fuzzy Logic</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="genai">
+                    <div class="project-top">
+                        <div class="project-title-row">
+                            <h3 class="project-title">Voicense – AI-Powered Lecture Note Generation Platform</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/SudeeraDilshan" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View on GitHub">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://doi.org/10.1109/ICITR64794.2024.10857774" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View IEEE Paper">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 8px;">
+                            <span class="tech-tag" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-color: rgba(56, 189, 248, 0.3);">IEEE ICITR 2024</span>
+                        </div>
+                        <p class="project-desc">
+                            Developed an AI-powered mobile application for automated lecture recording, transcription, and intelligent note generation, serving on the core backend and AI pipeline team. Delivered real-time transcription, structured notes, topic-wise summaries, and an AI chat assistant, with an asynchronous backend integrating Whisper AI and LangChain-based retrieval to ground responses in lecture content.
+                        </p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Gemini API</span>
+                        <span class="tech-tag">Whisper AI</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-top">
+                        <div class="project-title-row">
+                            <h3 class="project-title">Time Series Transit Forecast: Visualized Analysis</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/SudeeraDilshan/time-series-transit-forecast-visualized-analysis" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View on GitHub">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-desc">
+                            Automated a Socrata API data pipeline to extract and preprocess 20+ years (9,000+ records) of daily public transit data. Trained an XGBoost model on engineered temporal lag features that outperformed a Facebook Prophet baseline, and built an interactive Streamlit and Plotly app to explore trends, seasonal anomalies, and real-time forecasts.
+                        </p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">Prophet</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Plotly</span>
+                        <span class="tech-tag">Socrata API</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="cv">
+                    <div class="project-top">
+                        <div class="project-title-row">
+                            <h3 class="project-title">Real-time Vehicle Speed Detection System</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/SudeeraDilshan/Real-time-vehicle-speed-detection-system.git" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View on GitHub">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-desc">
+                            Built a real-time computer vision pipeline using YOLOv8 and OpenCV to detect, track, and estimate vehicle speeds on highways. Engineered a custom centroid tracking algorithm and spatial mapping with virtual reference lines, delivering directional vehicle counting and processed video output with bounding boxes and speed labels.
+                        </p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">YOLOv8</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Centroid Tracking</span>
+                        <span class="tech-tag">Spatial Mapping</span>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-top">
+                        <div class="project-title-row">
+                            <h3 class="project-title">Bias-Free Loan Eligibility & Risk Explainability System</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/SudeeraDilshan" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View on GitHub">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-desc">
+                            Built an end-to-end ML system for loan eligibility prediction with SHAP-based explainability and fairness auditing for transparent, ethical financial decisions. Integrated a small language model (Qwen2.5-0.5B) to turn SHAP explanations into human-readable narratives.
+                        </p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">FairLearn</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">ReactJS</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Qwen2.5-0.5B</span>
+                        <span class="tech-tag">SHAP</span>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-top">
+                        <div class="project-title-row">
+                            <h3 class="project-title">StreamAI – Hybrid Machine Learning Recommender System</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/SudeeraDilshan/StreamAI-Hybrid-Movie-Recommender-System.git" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View on GitHub">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-desc">
+                            Developed a hybrid recommendation engine combining K-Means for user segmentation, SVD (matrix factorization) for collaborative filtering, and TF-IDF for content-based filtering. Designed a dynamic routing algorithm that moves users from popularity-based to collaborative recommendations as their data profile grows, solving the cold-start problem, and packaged the pipeline into an interactive Streamlit dashboard.
+                        </p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">scikit-learn</span>
+                        <span class="tech-tag">scikit-surprise</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">SVD</span>
+                        <span class="tech-tag">K-Means</span>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card" data-category="genai">
+                    <div class="project-top">
+                        <div class="project-title-row">
+                            <h3 class="project-title">Customer Support Bot on Fine-tuned SLM</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/SudeeraDilshan/Customer-Support-Bot-on-Finetuned-SLM.git" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View on GitHub">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-desc">
+                            Built an end-to-end pipeline to fine-tune Qwen2.5-0.5B-Instruct for customer support on a 4 GB VRAM GPU using QLoRA (4-bit quantization), LoRA adapters, micro-batching, and gradient accumulation. Converted 5,000 rows of the Bitext customer support dataset into ChatML format, trained with TRL’s SFTTrainer, and delivered an interactive chat interface for the adapters.
+                        </p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">PEFT</span>
+                        <span class="tech-tag">bitsandbytes</span>
+                        <span class="tech-tag">Qwen2.5-0.5B</span>
+                        <span class="tech-tag">QLoRA</span>
+                        <span class="tech-tag">TRL</span>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card" data-category="cv">
+                    <div class="project-top">
+                        <div class="project-title-row">
+                            <h3 class="project-title">Virtual Mouse Using Hand Gestures</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/SudeeraDilshan" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View on GitHub">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-desc">
+                            Developed a hands-free virtual mouse using real-time webcam hand gesture recognition. Implemented hand landmark detection and tracking to map finger positions and gestures to cursor movement, clicks, scrolling, and drag actions.
+                        </p>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">MediaPipe</span>
+                        <span class="tech-tag">PyAutoGUI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="section" id="skills">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                    Technical Skills
+                </h2>
+                <span class="section-count">9 Domains</span>
+            </div>
+
+            <div class="skills-container">
+                <!-- 1. Programming Languages -->
+                <div class="skill-group">
+                    <div class="skill-group-title">
+                        <span>Programming Languages</span>
+                    </div>
+                    <div class="skill-group-items">
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">Java</span>
+                        <span class="skill-pill">C#</span>
+                        <span class="skill-pill">R</span>
+                        <span class="skill-pill">C</span>
+                        <span class="skill-pill">Dart</span>
+                        <span class="skill-pill">JavaScript</span>
+                        <span class="skill-pill">SQL</span>
+                    </div>
+                </div>
+
+                <!-- 2. GenAI & Agentic Frameworks -->
+                <div class="skill-group">
+                    <div class="skill-group-title">
+                        <span>GenAI & Agentic Frameworks</span>
+                    </div>
+                    <div class="skill-group-items">
+                        <span class="skill-pill">LangChain</span>
+                        <span class="skill-pill">LangGraph</span>
+                        <span class="skill-pill">Langflow</span>
+                        <span class="skill-pill">LangSmith</span>
+                        <span class="skill-pill">MCP</span>
+                    </div>
+                </div>
+
+                <!-- 3. AI/ML Libraries -->
+                <div class="skill-group">
+                    <div class="skill-group-title">
+                        <span>AI / ML Libraries</span>
+                    </div>
+                    <div class="skill-group-items">
+                        <span class="skill-pill">PyTorch</span>
+                        <span class="skill-pill">TensorFlow</span>
+                        <span class="skill-pill">Keras</span>
+                        <span class="skill-pill">Scikit-learn</span>
+                        <span class="skill-pill">XGBoost</span>
+                        <span class="skill-pill">SHAP</span>
+                        <span class="skill-pill">HuggingFace</span>
+                        <span class="skill-pill">OpenCV</span>
+                        <span class="skill-pill">YOLOv8</span>
+                    </div>
+                </div>
+
+                <!-- 4. Data Analysis -->
+                <div class="skill-group">
+                    <div class="skill-group-title">
+                        <span>Data Analysis</span>
+                    </div>
+                    <div class="skill-group-items">
+                        <span class="skill-pill">pandas</span>
+                        <span class="skill-pill">numpy</span>
+                        <span class="skill-pill">matplotlib</span>
+                        <span class="skill-pill">seaborn</span>
+                        <span class="skill-pill">Tableau</span>
+                    </div>
+                </div>
+
+                <!-- 5. Big Data & Analytics -->
+                <div class="skill-group">
+                    <div class="skill-group-title">
+                        <span>Big Data & Analytics</span>
+                    </div>
+                    <div class="skill-group-items">
+                        <span class="skill-pill">Apache Spark</span>
+                        <span class="skill-pill">Databricks</span>
+                    </div>
+                </div>
+
+                <!-- 6. Data & Vector Stores -->
+                <div class="skill-group">
+                    <div class="skill-group-title">
+                        <span>Data & Vector Stores</span>
+                    </div>
+                    <div class="skill-group-items">
+                        <span class="skill-pill">MongoDB</span>
+                        <span class="skill-pill">MySQL</span>
+                        <span class="skill-pill">PostgreSQL</span>
+                        <span class="skill-pill">Neo4j</span>
+                        <span class="skill-pill">FAISS</span>
+                        <span class="skill-pill">ChromaDB</span>
+                        <span class="skill-pill">Redis</span>
+                    </div>
+                </div>
+
+                <!-- 7. MLOps, Cloud & Messaging -->
+                <div class="skill-group">
+                    <div class="skill-group-title">
+                        <span>MLOps, Cloud & Messaging</span>
+                    </div>
+                    <div class="skill-group-items">
+                        <span class="skill-pill">MLflow</span>
+                        <span class="skill-pill">Docker</span>
+                        <span class="skill-pill">AWS</span>
+                        <span class="skill-pill">Jenkins</span>
+                        <span class="skill-pill">GitHub Actions</span>
+                        <span class="skill-pill">Firebase</span>
+                        <span class="skill-pill">Mosquitto</span>
+                    </div>
+                </div>
+
+                <!-- 8. Backend & Full-Stack -->
+                <div class="skill-group">
+                    <div class="skill-group-title">
+                        <span>Backend & Full-Stack</span>
+                    </div>
+                    <div class="skill-group-items">
+                        <span class="skill-pill">FastAPI</span>
+                        <span class="skill-pill">Django</span>
+                        <span class="skill-pill">Flask</span>
+                        <span class="skill-pill">NodeJS</span>
+                        <span class="skill-pill">ReactJS</span>
+                        <span class="skill-pill">Spring Boot</span>
+                        <span class="skill-pill">Flutter</span>
+                        <span class="skill-pill">Microservices</span>
+                    </div>
+                </div>
+
+                <!-- 9. Version Control -->
+                <div class="skill-group">
+                    <div class="skill-group-title">
+                        <span>Version Control</span>
+                    </div>
+                    <div class="skill-group-items">
+                        <span class="skill-pill">Git</span>
+                        <span class="skill-pill">GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section class="section" id="publications">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                    Publications
+                </h2>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Voicense: AI-Powered Lecture Note Generation Tool</div>
+                <div class="pub-venue">
+                    <strong>9th International Conference on Information Technology Research (ICITR) 2024</strong>, pp. 1–6, IEEE, Dec 2024.<br>
+                    University of Moratuwa, Sri Lanka.
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1109/ICITR64794.2024.10857774" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 14px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                        <span>DOI: 10.1109/ICITR64794.2024.10857774</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="section" id="certifications">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="7"></circle>
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                    Certifications
+                </h2>
+            </div>
+
+            <div class="certs-grid">
+                <!-- Cert 1 -->
+                <a href="https://www.udemy.com/certificate/UC-d38290d7-7bbd-4e04-af46-65ce3cd06b26/" target="_blank" rel="noopener noreferrer" class="cert-card">
+                    <div class="cert-info">
+                        <div class="cert-name">Advanced Python Programming</div>
+                        <div class="cert-issuer">Source Code</div>
+                    </div>
+                    <div class="cert-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Cert 2 -->
+                <a href="https://learn.deeplearning.ai/accomplishments/054d832d-e066-4a38-bc4a-87ac0271e655" target="_blank" rel="noopener noreferrer" class="cert-card">
+                    <div class="cert-info">
+                        <div class="cert-name">MCP: Build Rich-Context AI Apps with Anthropic</div>
+                        <div class="cert-issuer">DeepLearning.AI</div>
+                    </div>
+                    <div class="cert-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Cert 3 -->
+                <a href="https://learn.deeplearning.ai/accomplishments/1a36a25b-d410-410d-8cc1-388d91f75e25?usp=sharing" target="_blank" rel="noopener noreferrer" class="cert-card">
+                    <div class="cert-info">
+                        <div class="cert-name">LangChain for LLM Application Development</div>
+                        <div class="cert-issuer">DeepLearning.AI</div>
+                    </div>
+                    <div class="cert-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Cert 4 -->
+                <a href="https://graphacademy.neo4j.com/c/d2321058-37ac-4f8d-81c3-a4c0d2437598" target="_blank" rel="noopener noreferrer" class="cert-card">
+                    <div class="cert-info">
+                        <div class="cert-name">Neo4j Certified Professional</div>
+                        <div class="cert-issuer">Neo4j GraphAcademy</div>
+                    </div>
+                    <div class="cert-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Cert 5 -->
+                <a href="https://www.linkedin.com/posts/sudeera-dilshan-2461a5295_just-completed-the-kubernetes-from-10000-share-7360917146505261057-jqlw/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEdlqRYBmZJdjDy5wl3SLJlQ6VjFCB9wBvI" target="_blank" rel="noopener noreferrer" class="cert-card">
+                    <div class="cert-info">
+                        <div class="cert-name">Kubernetes From 10000 Feet</div>
+                        <div class="cert-issuer">CoDeKu DevOps Academy</div>
+                    </div>
+                    <div class="cert-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Achievements & Extracurricular Activities -->
+        <section class="section" id="achievements">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                        <path d="M4 22h16"></path>
+                        <path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34"></path>
+                        <path d="M6 4h12v7a6 6 0 0 1-12 0V4z"></path>
+                    </svg>
+                    Achievements & Activities
+                </h2>
+            </div>
+
+            <div class="card">
+                <ul class="card-bullet-list">
+                    <li><strong>6th Place</strong>, CodeRush 2023 (Organised by INTECS)</li>
+                    <li><strong>Participant</strong>, ACES Coders V10.0 2023 – University of Peradeniya</li>
+                    <li><strong>University of Moratuwa Karate Team Representative</strong> (2022, 2023)</li>
+                    <li><strong>Technical Content Creator on Medium</strong> – <a href="https://medium.com/@dilshanrgs31" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary);">@dilshanrgs31</a></li>
                 </ul>
             </div>
         </section>
 
-        <section>
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div><span class="skill-category">Languages:</span> Python, Java, R, C, Dart, JavaScript, SQL</div>
-                <div><span class="skill-category">GenAI & Agentic Frameworks:</span> LangChain, LangGraph, Langflow, LangSmith, MCP</div>
-                <div><span class="skill-category">AI/ML Libraries:</span> PyTorch, TensorFlow, Keras, Scikit-learn, XGBoost, SHAP, HuggingFace</div>
-                <div><span class="skill-category">Data Analysis:</span> pandas, numpy, matplotlib, seaborn, Tableau</div>
-                <div><span class="skill-category">Data & Vector Stores:</span> MongoDB, MySQL, PostgreSQL, Neo4j, FAISS, ChromaDB, Redis</div>
-                <div><span class="skill-category">MLOps, Cloud & Messaging:</span> Docker, AWS, Jenkins, GitHub Actions, Firebase, Git, Mosquitto</div>
-                <div><span class="skill-category">Backend & Full-Stack:</span> FastAPI, Flask, NodeJS, ReactJS, Spring Boot, Flutter</div>
+        <!-- References Section -->
+        <section class="section" id="references">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    References
+                </h2>
+            </div>
+
+            <div class="references-grid">
+                <!-- Ref 1 -->
+                <div class="ref-card">
+                    <div class="ref-name">Dr. (Ms.) I. Thilini S. Piyatilake</div>
+                    <div class="ref-title">Head of Department</div>
+                    <div class="ref-inst">Department of Computational Mathematics, University of Moratuwa</div>
+                    <div class="ref-contact">
+                        <a href="mailto:thilinisp@uom.lk">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>thilinisp@uom.lk</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ref 2 -->
+                <div class="ref-card">
+                    <div class="ref-name">Mr. Charith Bimsara</div>
+                    <div class="ref-title">Associate Technical Lead – AI</div>
+                    <div class="ref-inst">Rootcode Labs</div>
+                    <div class="ref-contact">
+                        <a href="mailto:charith.bimsara@rootcodelabs.com">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>charith.bimsara@rootcodelabs.com</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section>
-            <h2>Projects</h2>
-            
+        <!-- Footer -->
+        <footer class="footer">
             <div>
-                <div class="item-header">
-                    <span class="item-title">Soft Prompting-Based SLM Generalisation - Meta-Learning & Fuzzy Reasoning</span>
-                    <span class="item-date"><a href="https://github.com/SudeeraDilshan/Soft-Prompting-based-small-language-models-generalization" target="_blank">GitHub</a> | <em>Final Year Research</em></span>
-                </div>
-                <ul>
-                    <li>Conducting research to improve cross-task generalisation in Small Language Models (SLMs) through chain-of-thought knowledge distillation and meta-learning.</li>
-                    <li>Designed a custom architecture featuring a lightweight MLP with a top fuzzy layer for adaptive soft prompt optimisation, enabling improved reasoning across diverse tasks.</li>
-                    <li>Implemented a custom transformer model, MLP, and an ANFIS (Adaptive Neuro-Fuzzy Inference System) module, with soft prompts trained using First-Order MAML (FOMAML).</li>
-                    <li><em>Technologies: Python, PyTorch, Qwen2.5-0.5B, Meta-Learning, FOMAML, ANFIS, Fuzzy Logic</em></li>
-                </ul>
+                © <span id="currentYear"></span> Sudeera Dilshan • AI/ML Engineer
             </div>
-
-            <div style="margin-top: 15px;">
-                <div class="item-header">
-                    <span class="item-title">Voicense - AI-Powered Lecture Note Generation Platform</span>
-                    <span class="item-date"><a href="https://github.com/SudeeraDilshan" target="_blank">GitHub</a></span>
-                </div>
-                <ul>
-                    <li>Developed an AI-powered mobile application for automated lecture recording, transcription, and intelligent note generation; served on the core backend and AI pipeline team.</li>
-                    <li>Published findings at the 9th International Conference on Information Technology Research (ICITR 2024), IEEE.</li>
-                    <li>Delivered core features including real-time audio transcription, automatic structured note generation, topic-wise summarization, and an AI chat assistant for querying lecture content.</li>
-                    <li><em>Technologies: Flutter, FastAPI, MongoDB, LangChain, Gemini API, Whisper AI, Docker</em></li>
-                </ul>
+            <div class="footer-links">
+                <a href="Dilshan_RGS_CV.pdf" download="Dilshan_RGS_CV.pdf" class="cv-download-btn">Download CV</a>
+                <a href="#about">Back to Top ↑</a>
             </div>
-
-            <div style="margin-top: 15px;">
-                <div class="item-header">
-                    <span class="item-title">StreamAI - Hybrid Machine Learning Recommender System</span>
-                    <span class="item-date"><a href="https://github.com/SudeeraDilshan" target="_blank">GitHub</a></span>
-                </div>
-                <ul>
-                    <li>Developed a hybrid recommendation engine utilizing K-Means for user segmentation, SVD (Matrix Factorization) for collaborative filtering, and TF-IDF for content-based filtering.</li>
-                    <li>Designed a dynamic routing algorithm that transitions users from Popularity-based to Collaborative algorithms as their data profile grows, solving the cold-start problem.</li>
-                    <li>Packaged the machine learning pipeline into a production-ready, interactive web dashboard using Streamlit.</li>
-                    <li><em>Technologies: Python, scikit-learn, scikit-surprise, Streamlit, Pandas</em></li>
-                </ul>
-            </div>
-
-            <div style="margin-top: 15px;">
-                <div class="item-header">
-                    <span class="item-title">Bias-Free Loan Eligibility & Risk Explainability System</span>
-                    <span class="item-date"><a href="https://github.com/SudeeraDilshan" target="_blank">GitHub</a></span>
-                </div>
-                <ul>
-                    <li>Built an end-to-end ML system for loan eligibility prediction integrating SHAP-based explainability and fairness auditing to ensure transparent, ethical financial decisions.</li>
-                    <li>Integrated a small language model (Qwen2.5-0.5B) to convert SHAP-based explanations into clear, human-readable narratives for end users.</li>
-                    <li><em>Technologies: Python, XGBoost, SHAP, FairLearn, FastAPI, ReactJS, Docker, Scikit-learn, Qwen2.5-0.5B</em></li>
-                </ul>
-            </div>
-
-            <div style="margin-top: 15px;">
-                <div class="item-header">
-                    <span class="item-title">Time Series Transit Forecast: Visualized Analysis</span>
-                    <span class="item-date"><a href="https://github.com/SudeeraDilshan" target="_blank">GitHub</a></span>
-                </div>
-                <ul>
-                    <li>Automated a data pipeline using the Socrata API to extract and preprocess 20+ years (9,000+ records) of daily public transit data.</li>
-                    <li>Engineered temporal lag features to train an XGBoost regression model, outperforming a baseline Facebook Prophet model in predicting daily ridership.</li>
-                    <li>Developed an interactive Streamlit web application with Plotly to visualize historical trends, seasonal anomalies, and run dynamic model forecasts in real-time.</li>
-                    <li><em>Technologies: Python, XGBoost, Prophet, Streamlit, Pandas</em></li>
-                </ul>
-            </div>
-
-            <div style="margin-top: 15px;">
-                <div class="item-header">
-                    <span class="item-title">Virtual Mouse Using Hand Gestures</span>
-                    <span class="item-date"><a href="https://github.com/SudeeraDilshan" target="_blank">GitHub</a></span>
-                </div>
-                <ul>
-                    <li>Developed a hands-free virtual mouse system using real-time webcam-based hand gesture recognition, enabling full cursor control without physical hardware.</li>
-                    <li>Implemented real-time hand landmark detection and tracking to map finger positions and gestures to cursor movement, left/right clicks, scrolling, and drag actions.</li>
-                    <li><em>Technologies: Python, OpenCV, MediaPipe, PyAutoGUI</em></li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Publications</h2>
-            <ul>
-                <li><strong>Voicense: AI-Powered Lecture Note Generation Tool</strong><br>
-                    <em>9th International Conference on Information Technology Research (ICITR) 2024</em>, pp. 1&ndash;6, IEEE, Dec 2024. University of Moratuwa, Sri Lanka. <a href="https://doi.org/10.1109/ICITR64794.2024.10857774" target="_blank">DOI: 10.1109/ICITR64794.2024.10857774</a>
-                </li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Certifications</h2>
-            <ul>
-                <li><a href="https://www.udemy.com/certificate/UC-d38290d7-7bbd-4e04-af46-65ce3cd06b26/" target="_blank">Advanced Python Programming &ndash; Source Code</a></li>
-                <li><a href="https://learn.deeplearning.ai/accomplishments/054d832d-e066-4a38-bc4a-87ac0271e655" target="_blank">MCP: Build Rich-Context AI Apps with Anthropic &ndash; DeepLearning.AI</a></li>
-                <li><a href="https://learn.deeplearning.ai/accomplishments/1a36a25b-d410-410d-8cc1-388d91f75e25?usp=sharing" target="_blank">LangChain for LLM Application Development &ndash; DeepLearning.AI</a></li>
-                <li><a href="https://graphacademy.neo4j.com/c/d2321058-37ac-4f8d-81c3-a4c0d2437598" target="_blank">Neo4j Certified Professional &ndash; Neo4j GraphAcademy</a></li>
-                <li><a href="https://www.linkedin.com/posts/sudeera-dilshan-2461a5295_just-completed-the-kubernetes-from-10000-share-7360917146505261057-jqlw/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEdlqRYBmZJdjDy5wl3SLJlQ6VjFCB9wBvI" target="_blank">Kubernetes From 10000 Feet &ndash; CoDeKu DevOps Academy</a></li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Achievements & Extracurricular Activities</h2>
-            <ul>
-                <li><strong>6th Place</strong>, CodeRush 2023 (Organised by INTECS)</li>
-                <li><strong>Participant</strong>, ACES Coders V10.0 2023 &ndash; University of Peradeniya</li>
-                <li>University of Moratuwa Karate Team Representative &ndash; 2022, 2023</li>
-                <li>Technical Content Creator on Medium &ndash; <a href="https://medium.com/@dilshanrgs31" target="_blank">@dilshanrgs31</a></li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>References</h2>
-            <div style="display: flex; gap: 40px; flex-wrap: wrap;">
-                <div>
-                    <strong>Dr. (Ms.) I. Thilini S. Piyatilake</strong><br>
-                    Head of Department<br>
-                    Department of Computational Mathematics<br>
-                    University of Moratuwa<br>
-                    <a href="mailto:thilinisp@uom.lk">thilinisp@uom.lk</a>
-                </div>
-                <div>
-                    <strong>Mr. Charith Bimsara</strong><br>
-                    Associate Technical Lead &ndash; AI<br>
-                    Rootcode Labs<br>
-                    <a href="mailto:charith.bimsara@rootcodelabs.com">charith.bimsara@rootcodelabs.com</a>
-                </div>
-            </div>
-        </section>
+        </footer>
     </div>
+
+    <!-- Scripts -->
+    <script>
+        // Set dynamic current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Theme Toggle Functionality
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIconDark = document.getElementById('themeIconDark');
+        const themeIconLight = document.getElementById('themeIconLight');
+        const htmlElement = document.documentElement;
+
+        function setTheme(theme) {
+            htmlElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (theme === 'dark') {
+                themeIconDark.style.display = 'block';
+                themeIconLight.style.display = 'none';
+            } else {
+                themeIconDark.style.display = 'none';
+                themeIconLight.style.display = 'block';
+            }
+        }
+
+        // Initialize Theme from localStorage or OS preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            setTheme('light');
+        } else {
+            setTheme('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+
+        // Project Filter Functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Programmatic CV Download via Blob
+        function handleCvDownload(event) {
+            event.preventDefault();
+            const pdfPath = 'Dilshan_RGS_CV.pdf';
+            const filename = 'Dilshan_RGS_CV.pdf';
+
+            fetch(pdfPath)
+                .then(res => {
+                    if (!res.ok) throw new Error('Network error: ' + res.status);
+                    return res.blob();
+                })
+                .then(blob => {
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const tempAnchor = document.createElement('a');
+                    tempAnchor.style.display = 'none';
+                    tempAnchor.href = blobUrl;
+                    tempAnchor.download = filename;
+                    document.body.appendChild(tempAnchor);
+                    tempAnchor.click();
+                    setTimeout(() => {
+                        window.URL.revokeObjectURL(blobUrl);
+                        document.body.removeChild(tempAnchor);
+                    }, 400);
+                })
+                .catch(err => {
+                    console.warn('Blob download failed, using direct anchor fallback:', err);
+                    const fallbackLink = document.createElement('a');
+                    fallbackLink.href = pdfPath;
+                    fallbackLink.download = filename;
+                    document.body.appendChild(fallbackLink);
+                    fallbackLink.click();
+                    document.body.removeChild(fallbackLink);
+                });
+        }
+
+        document.querySelectorAll('.cv-download-btn').forEach(btn => {
+            btn.addEventListener('click', handleCvDownload);
+        });
+    </script>
 </body>
 </html>
